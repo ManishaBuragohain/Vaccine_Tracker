@@ -55,12 +55,22 @@ const Landing = () => {
     retrieveData();
   }, []);
 
-  const initialValues = {
+  const [initialValues, setInitialValues] = useState({
     firstName: "",
     lastName: "",
     pincode: "",
     email: "",
     date: "",
+  });
+
+  const resetInitialValues = () => {
+    setInitialValues({
+      firstName: "",
+      lastName: "",
+      pincode: "",
+      email: "",
+      date: "",
+    });
   };
 
   const onSubmit = async (values, { setSubmitting, resetForm }) => {
@@ -80,7 +90,6 @@ const Landing = () => {
     } catch (error) {
       console.log("Error", error);
     }
-
     setSubmitting(false);
   };
 
@@ -109,7 +118,6 @@ const Landing = () => {
               </div>
             </div>
           </div>
-
           <div className="form_container">
             <div className="container_landing_mobile">
               <div className="logo_container_hero">
@@ -225,7 +233,7 @@ const Landing = () => {
                     <button
                       type="reset"
                       className="reset_btn"
-                      onClick={() => navigate(pages.Statistics)}
+                      onClick={() => resetInitialValues()}
                     >
                       Reset Form
                     </button>
