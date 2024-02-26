@@ -4,4 +4,4 @@ export const pages = {
 };
 
 // export const baseUrl = "http://localhost:8000";
-export const baseUrl = "https://vercel-server-deploy-node.vercel.app";
+export const baseUrl = "https://vaccine-tracker-server.vercel.app";
